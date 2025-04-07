@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #e0e0e0;
+      display: flex;
+
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity */
+      z-index: -1;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: rgba(42, 42, 42, 0.6); /* semi-transparent sidebar */
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 30px 15px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h1 {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav a {
+      display: block;
+      color: #e0e0e0;
+      text-decoration: none;
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #555;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .work, .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .work-item, .social-item {
+      background-color: rgba(51, 51, 51, 0.5);
+      padding: 20px;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .work-item a, .social-item a {
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+
+    .work-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .work-item.bg-image {
+      background-image: url('your-project-image.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Optional overlay to make text readable */
+    .work-item.bg-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    .work-item.bg-image * {
+      position: relative;
+      z-index: 1;
+    }
+
+
+
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #444;
+      color: #aaa;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .sidebar nav a {
+        margin: 10px;
+      }
+
+      .work, .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .card-link {
+      text-decoration: none;     /* removes underline */
+      color: inherit;            /* makes text match parent color */
+      display: inline-block;     /* ensures block-level wrapping */
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h1>MDJ</h1>
+    <nav>
+      <a href="#music">Music Releases</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <section id="about" class="section">
+      <h2>MDJ</h2>
+      <div class="work">
+          <div class="work-item" style="width: 500px;">
+              <p style="font-size: small;">
+                Software Engineer | Music Producer  | Light Designer | Electric Guitar
+              </p>
+        </div>
+        <div class="work-item" style="width: 100px;">
+              <p style="font-size: small;">
+                Los Angeles
+              </p>
+        </div>
+    </div>
+    </section>
+
+    <section id="music" class="section">
+      <h2>Music Releases</h2>
+      <div class="work">
+        <a href="https://distrokid.com/hyperfollow/mdj2/ep-i" target="_blank" class="card-link">
+            <div class="work-item bg-image" style="background-image: url('EP I.png');">
+              <h3>EP I</h3>
+            </div>
+        </a>
+
+        <a href="https://distrokid.com/hyperfollow/mdj2/ep-ii" target="_blank" class="card-link">
+            <div class="work-item bg-image" style="background-image: url('EP II.png');">
+              <h3>EP II</h3>
+            </div>
+        </a>
+
+        <a href="https://distrokid.com/hyperfollow/mdj2/novox" target="_blank" class="card-link">
+            <div class="work-item bg-image" style="background-image: url('Novox.png');">
+              <h3>Novox</h3>
+            </div>
+        </a>
+
+        <a href="https://distrokid.com/hyperfollow/conversebasin/mystic-sunrise-feat-mdj" target="_blank" class="card-link">
+            <div class="work-item bg-image" style="background-image: url('Mystic Sunrise.jpg');">
+              <h3>Mystic Sunrise</h3>
+            </div>
+        </a>
+
+        <a href="https://distrokid.com/hyperfollow/mdj2/ep-3-am" target="_blank" class="card-link">
+            <div class="work-item bg-image" style="background-image: url('EP 3.png');">
+              <h3>EP 3: A.M.</h3>
+            </div>
+        </a>
+
+        <a href="https://distrokid.com/hyperfollow/mdj2/ep-iv-story-mode" target="_blank" class="card-link">
+            <div class="work-item bg-image" style="background-image: url('EP IV.jpg');">
+              <h3>EP IV: Story Mode</h3>
+            </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <div class="work">
+            <a href="https://github.com/marcdjulien/spotify-terminal" target="_blank" class="card-link">
+                <div class="work-item" style="background-color: rgba(0, 45, 45, 0.5);">
+                  <h3>Spotify Terminal</h3>
+                  <p>Terminal program to play/control music via Spotify.</p>
+                </div>
+            </a>
+
+            <div class="work">
+                <a href="https://github.com/marcdjulien/codedmx" target="_blank" class="card-link">
+                    <div class="work-item" style="background-color: rgba(50, 50, 50, 0.5);">
+                      <h3>CodeDMX</h3>
+                      <p>Control your DMX devices using a simple python based coding framework and graphical automation curves.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work">
+                <a href="https://github.com/marcdjulien/akai-force-depot" target="_blank" class="card-link">
+                    <div class="work-item" style="background-color: rgba(50, 50, 50, 0.5);">
+                      <h3>Akai Force Depot</h3>
+                      <p>Contains scripts, source code, and documentation for my own personal Akai Force development.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="social-links">
+        <div class="social-item">
+          <a href="https://github.com/marcdjulien" target="_blank">GitHub</a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </div>
+        <div class="social-item">
+          <a href="https://soundcloud.com/mdjofficial" target="_blank">SoundCloud</a>
+        </div>
+        <div class="social-item">
+          <a href="https://mdjmusic.bandcamp.com" target="_blank">Bandcamp</a>
+        </div>
+        <div class="social-item">
+          <a href="mailto:marcdjulien@gmail.com" target="_blank">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 MDJ
+    </footer>
+  </div>
+</body>
+</html>
